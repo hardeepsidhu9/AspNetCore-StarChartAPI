@@ -123,14 +123,15 @@ namespace StarChart.Controllers
 
             if (celestialObjects != null && celestialObjects.Any())
             {
-                return NotFound();
-            }
-            else
-            {
                 _context.CelestialObjects.RemoveRange(celestialObjects);
                 _context.SaveChanges();
 
                 return NoContent();
+                
+            }
+            else
+            {
+                return NotFound();
             }
         }
     }
